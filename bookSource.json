@@ -70,7 +70,3 @@
     "weight": 0
   }
 ]
-    "searchUrl": "\u003Cjs\u003E\nlet url =eval(String(source.bookSourceComment))+'modules/article/search.php,';\nbody =`searchtype=all&searchkey=${key}&t_btnsearch=&page=${page}`\npost = JSON.stringify({\n    \"body\": String(body),\n    \"method\": \"POST\"\n  })\n  url += post\n\u003C/js\u003E",
-    "weight": 0
-  }
-]
