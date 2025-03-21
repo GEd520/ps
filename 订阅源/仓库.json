@@ -16,14 +16,14 @@
     "ruleDescription": "",
     "ruleImage": "<js>\nresult=`https://ged520-github-io.pages.dev/header_2025_02_10_18_24.png`\n</js>",
     "ruleLink": "<js>\np=java.getString('a@href')\nml=`https://www.coolapk.com/link?url=legado://import/Source?src=https://ghproxy.net/https://raw.githubusercontent.com${p}`\nresult=ml.replace(/blob/,'refs/heads')\n</js>",
-    "ruleNextPage": "@js:java.log(baseUrl)",
+    "ruleNextPage": "",
     "rulePubDate": "<js>\ntry {\n\tp = java.getString('a@href')\n\tml = `https://ghproxy.net/https://raw.githubusercontent.com${p}`\n\turl = ml.replace(/blob/, 'refs/heads')\n\tlet response = java.ajax(url)\n\tlet data = JSON.parse(response)\n\tpi = (data[0].bookSourceComment).replace(/\\/\\/(.*)\\n.*\\n.*/,'$1');\tpo=data[0].bookSourceUrl\n\tresult=`${pi}🔖${po}`\n} catch (e) {\n\tresult = \"\"\n}\nresult\n</js>",
     "ruleTitle": "<js>\ntry {\n\tp = java.getString('a@href')\n\tml = `https://ghproxy.net/https://raw.githubusercontent.com${p}`\n\turl = ml.replace(/blob/, 'refs/heads')\n\tlet response = java.ajax(url)\n\tlet data = JSON.parse(response)\n\tresult = data[0].bookSourceName\n\t} catch (e) {\n\tresult = \"\"\n}\nresult\n</js>",
     "singleUrl": false,
     "sortUrl": "🔖书源🔖::{{getUrl()}}ps\n🧾书源🧾::{{getUrl()}}als\n🔖漫画🔖::{{getUrl()}}manhua\n🧾视频🧾::{{getUrl()}}shiping",
     "sourceComment": "//挂梯访问，不然访问不了",
     "sourceGroup": "",
-    "sourceIcon": "https://ged520-github-io.pages.dev/header_2025_02_10_18_24.png",
+    "sourceIcon": "https://ged520-github-io.pages.dev/Screenshot_20250322_000439.jpg",
     "sourceName": "辞晨仓库",
     "sourceUrl": ""
   }
