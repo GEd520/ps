@@ -1,0 +1,64 @@
+[
+  {
+    "bookSourceComment": "//2025.2.6by◎辞晨◎\n//书籍变量\n//可以随便注册，但好像看不了vip",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "🌐聚小说网◎辞晨◎",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.juxiaoshuo.net/##",
+    "customOrder": 110,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\npush(\"全部🌊分类\",null,1,1)\n\tarList=[\"全本\",\"玄幻\",\"奇幻\",\"仙侠\",\"武侠\",\"历史\",\"都市\",\"科幻\",\"悬疑\",\"游戏\",\"军事\",\"现实\"]\n\tarList.map((tag,index)=>{\n\t\turl=`/p/c/${tag}<,?page={{page+1}}>`;\n\t\tpush(tag, url, 1, 0.25);\n\t\t});\n//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "header": "@js:\nJSON.stringify({\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': baseUrl,\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'referer': baseUrl,\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
+    "jsLib": "qq='33333330323533343037';\ntg='6c65742075726c203d202768747470733a2f2f7777772e636f6f6c61706b2e636f6d2f6c696e6b3f75726c3d6c656761646f3a2f2f696d706f72742f536f757263653f7372633d68747470733a2f2f676870726f78792e6e65742f68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4745643532302f6a682f726566732f68656164732f6d61696e2f626f6f6b536f757263652e6a736f6e273b0a6a6176612e737461727442726f777365722875726c2c2027e69bb4e696b027293b';\nfunction hexToInt(e, t) {\n    var r = e.substr(t, 2);\n    return parseInt(r, 16);\n}",
+    "lastUpdateTime": 1738846962266,
+    "loginCheckJs": "",
+    "loginUi": "[\n    {\n        \"name\": \"邮箱\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码\",\n        \"type\": \"password\"\n    },\n    {\n        \"name\": \" 💍注 册 \",\n        \"type\": \"button\",\n        \"action\": \"login(false)\"\n    },\n    {\n        \"name\": \"🔺登　录🔺\",\n        \"type\": \"button\",\n        \"action\": \"login(true)\"\n    },\n    {\n        \"name\": \" ♤登 出 \",\n        \"type\": \"button\",\n        \"action\": \"D()\"\n    },\n    {\n        \"name\": \"显示密码\",\n        \"type\": \"button\",\n        \"action\": \"T()\"\n    },\n    {\n        \"name\": \"点击🔖试试\",\n        \"type\": \"button\",\n        \"action\": \"O()\"\n    },\n    {\n        \"name\": \"⚙️更新⚙️\",\n        \"type\": \"button\",\n        \"action\": \"H()\"\n    }\n]",
+    "loginUrl": "function login(b) {\n  if (b == undefined) return true;\n  info = result\n  so = source.key.split(\"/#\")[0]\n  pw = info.密码\n\n  if (b) {\n    url = so + '/user/login,'\n    body = `{\"email\":\"${info.邮箱}\",\"passwd\":\"${pw}\"}`\n  } else {\n    url = so + '/user/register,'\n    body = `{\"email\":\"${info.邮箱}\",\"passwd\":\"${pw}\"}`\n  }\n  post = JSON.stringify({\n    \"body\": String(body),\n    \"method\": \"POST\"\n  })\n  url += post\n  java.log(url)\n  result = java.ajax(url)\n  java.log(result)\n  java.toast(result)\n  c = cookie.getCookie(source.key.split(\"/#\")[0])\n  source.setVariable(c)\n}\nD=()=>{\n\tjava.ajax(source.key.split(\"/#\")[0] + 'logout.php'); cookie.removeCookie(source.getKey().split('/#')[0]); source.setVariable(''); java.toast('登出成功')\n\t}\nfunction T() {\n\t   java.toast('密码：' + result.密码)\n  }\nO = () => {\n  java.toast(\"这个按钮是用来看的(((o(*ﾟ▽ﾟ*)o)))\"+\"联系q:\"+\neval(`${java.hexDecodeToString(qq)}`));\n}\nH=()=>{\n\teval(`${java.hexDecodeToString(tg)}`);\n\t\t}\n",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "author",
+      "canReName": "",
+      "coverUrl": "img",
+      "init": "<js>\nif (source.getLoginHeader() == null) {\n    eval(String(source.loginUrl));\n    login();\n}\npi=baseUrl.match(/\\/p\\/d\\/(\\d+)/);\npi=pi?pi[1]:1\n$ = java.getElements(\".font-select@option\");\nn = 0; // 默认选择源\nv = String(book.getVariable(\"custom\"));\nx = v.match(/^\\d+$/) ? v : n;\nx = parseInt(x) < $.length ? x : n;\njava.toast(x);\n// 提取书籍基本信息\nname = java.getString('[property=\"og:novel:book_name\"]@content');\nauthor = java.getString('[property=\"og:novel:author\"]@content');\nkind = java.getString('[property~=category|status|update_time]@content');\nlast = java.getString('[property~=latest_chapter_name]@content');\nimg = java.getString('[property=\"og:image\"]@content');\ninfo = \"&nbsp;&nbsp;🌾简介：\"+ java.getString('[property=\"og:description\"]@content');\n\n// 多源情况处理\nif ($.length > 1) {\n    y = '\\n📌使用说明：根据序号设置书籍变量来切换来源(默认0)。\\n🎯当前源：序号🔺' + x + '🔻【' + $[x].text() + '】' + (x == 0 ? ' (默认)' : '');\n    for (i in $) {\n        y += '\\n❤序号🔺' + i + '🔻【' + $[i].text() + '】\\n源地址：'+`https://www.juxiaoshuo.net/post/novel/toc?novelId=${pi}&novelFromId=${$[i].attr(\"value\")},{\"method\": \"POST\"}`;\n    }\n    info += y;\n}\nlet bookUrlz = `https://www.juxiaoshuo.net/post/novel/toc?novelId=${pi}&novelFromId=${$[x].attr(\"value\")},{\"method\": \"POST\"}`;\nif (!name || !author || !kind || !last || !img || !info) {\n    java.toast(\"⚠️书籍信息解析失败，可能是网络问题或网页链接不合法。请检查网页链接或稍后重试。\");\n}\n\ndata = {\n    name: name,\n    author: author,\n    kind: kind,\n    last: last,\n    img: img,\n    info: info,\n    bookUrl: bookUrlz\n};\n\n// 序列化为JSON格式\nJSON.stringify(data);\n</js>\n",
+      "intro": "info",
+      "kind": "kind",
+      "lastChapter": "last",
+      "name": "name",
+      "tocUrl": "bookUrl",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "#chaptercontent@class.part@html\n<js>\nif (src.match(/您的VIP会员已过期|登录\\<\\/a\\>后阅读全文/)) {\n    java.toast(\"❗❗❗【重新注册一下，刷新试试】👻\");\n} else {\n    // 获取页面中的特定元素\n    var list = java.getElements(\"#chaptercontent@class.part\");\n\n    // 检查是否获取到元素\n    if (!list || list.length === 0) {\n        java.toast(\"⚠️ 未找到章节内容，请检查选择器是否正确！\");\n        result = \"未找到章节内容\";\n    } else {\n        list.sort((a, b) => {\n            const numA = parseInt(a.attr(\"id\").match(/\\d+$/), 10) || 0;\n            const numB = parseInt(b.attr(\"id\").match(/\\d+$/), 10) || 0;\n            return numA - numB;\n        });\n\n        // 将排序后的元素内容拼接成字符串\n        result = Array.from(list).map(item => item.text()).join(\"\\n\");\n    }\n}\nresult;\n</js>"
+    },
+    "ruleExplore": {
+      "author": "dt span@text",
+      "bookList": ".item",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@data-src",
+      "intro": "dd@text",
+      "name": "dt a@text"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "<js>\nif(result.match(/访问太频繁/)){\n\tjava.toast(\"❗❗❗访问太频繁，请稍等一会再访问~\");\n\t}\nresult\n</js>\n$..result[*]",
+      "bookUrl": "https://www.juxiaoshuo.net/p/d/{{$.id}}",
+      "checkKeyWord": "--https://www.juxiaoshuo.net/p/p/13862/3538214/bqgnb/68747470733a2f2f7777772e627130352e63632f68746d6c2f34333935382f313533322e68746d6c#p332e9837420ebeca121ad4eba57792573",
+      "coverUrl": "$.pic",
+      "intro": "$.content",
+      "kind": "{{$.kind}},{{$.updateTime}}",
+      "lastChapter": "",
+      "name": "$.name"
+    },
+    "ruleToc": {
+      "chapterList": "$.result[*]",
+      "chapterName": "$.chapterName",
+      "chapterUrl": "$.chapterUrl",
+      "isPay": "",
+      "nextTocUrl": ""
+    },
+    "searchUrl": "https://www.juxiaoshuo.net/post/search?t={{java.get(source.key.split('/#')[0],{}).cookies().toString().match(/RANDOM_NUM=([^}]+)/)[1];}}&type=all&query={{key}}&page={{page}},{\n \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
