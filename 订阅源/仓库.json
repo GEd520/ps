@@ -1,7 +1,7 @@
 [
   {
     "articleStyle": 0,
-    "customOrder": -10098607,
+    "customOrder": -10098612,
     "enableJs": true,
     "enabled": true,
     "enabledCookieJar": true,
@@ -14,7 +14,7 @@
     "ruleArticles": "tbody@.react-directory-row",
     "ruleContent": "",
     "ruleDescription": "",
-    "ruleImage": "<js>\nresult=`https://ged520-github-io.pages.dev/header_2025_02_10_18_24.png`\n</js>",
+    "ruleImage": "<js>\nresult=`https://ged520-github-io.pages.dev/image_download2.jpg`\n</js>",
     "ruleLink": "<js>\np=java.getString('a@href')\nml=`https://www.coolapk.com/link?url=legado://import/Source?src=https://ghproxy.net/https://raw.githubusercontent.com${p}`\nresult=ml.replace(/blob/,'refs/heads')\n</js>",
     "ruleNextPage": "",
     "rulePubDate": "<js>\ntry {\n\tp = java.getString('a@href')\n\tml = `https://ghproxy.net/https://raw.githubusercontent.com${p}`\n\turl = ml.replace(/blob/, 'refs/heads')\n\tlet response = java.ajax(url)\n\tlet data = JSON.parse(response)\n\tpi = (data[0].bookSourceComment).replace(/\\/\\/(.*)\\n.*\\n.*/,'$1');\tpo=data[0].bookSourceUrl\n\tresult=`${pi}🔖${po}`\n} catch (e) {\n\tresult = \"\"\n}\nresult\n</js>",
