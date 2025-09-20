@@ -1,0 +1,38 @@
+<js>
+let sleep = Packages.java.lang.Thread.sleep;
+let tim = Math.floor(Math.random()*401);
+let tt = java.hexDecodeToString(result);
+sleep(600-tim);
+result = java['ajax'](java['hexDecodeToString'](result));
+b= java['md5Encode'](source.jsLib);
+if(b!='48698dd7aec41b9c27cde8b39987f391'){
+ java.log('\n❗请联系源作者❗')
+ java.toast('\n❗请联系源作者❗')
+}else{ if (result['match'](/您尚未登录/)) {
+    java['toast']('\n❗❗❗【您尚未登录，请重新登录】👻');
+    result = java['getString']('#contenta@html||.ccontent@html||#content@html||#acontent@html||#content@html',result);
+  }else if(result.match(/只订阅本章节/)){
+let url = getUrl()+'modules/obook/buychapter.php';
+let ck = source.getLoginHeader();
+if (ck==null) java.toast("\n❗未获取到登录信息❗");
+let tk = (ck.match(/UserToken%3D([^%]+)/)||['',''])[1]||1;
+let cid = tt.match(/cid\=(\d+)/)[1]||1;
+let body = `buytype=1&act=buy&jieqi_token=${tk}&cid=${cid}&submit=`;
+let headers = {
+        'user-agent': ua,
+        'x-requested-with': x_r_w,
+        'sec-ch-ua': s_c_u,
+        'sec-ch-ua-platform': s_c_u_p,
+        'referer': tt,
+        'cookie': ck
+    };
+cache.getFromMemory('getUrl()')
+sleep(600-tim);
+let pt = java.post(url,body,headers);
+let lc = pt.header("location");
+lc==null?java.toast('\n❗未获取到重定向链接，请重新登录❗'):result =java.ajax(lc);
+result = java.getString('[id*="content"]@html',result);
+result;
+}else{
+		result = java['getString']('#zcontent@html||.ccontent@html||#contentc@html||#acontent@html||#content@html',result);
+}}</js>
